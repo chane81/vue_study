@@ -1,9 +1,13 @@
 <template>
     <div>
         <ul>
-            <li v-for="todoItem in todoItems" v-bind:key="todoItem" class='shadow'>
-                {{ todoItem }}
-                <span class="removeBtn" v-on:click="removeTodo">
+            <li v-for="(todoItem, index) in todoItems" v-bind:key="index" class='shadow'>
+                <i class="checkBtn fas fa-check"
+                    v-bind:class="{checkBtnCompleted: todoItem.completed}"
+                    v-on:click="toggleComplete(todoItem, index)">
+                </i>
+                <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
+                <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
                     <i class="fas fa-trash-alt"></i>
                 </span>
             </li>
@@ -19,8 +23,16 @@ export default {
         }
     },
     methods: {
-        removeTodo: function() {
-
+        removeTodo: function(todoItem, index) {
+            console.log(todoItem, index);
+            localStorage.removeItem(todoItem);
+            this.todoItems.splice(index, 1);
+        },
+        toggleComplete: function(todoItem, index) {
+            console.log(todoItem, index);
+            todoItem.completed = !todoItem.completed;
+            localStorage.removeItem(todoItem.item);
+            localStorage.setItem(todoItem.item, JSON.stringify(todoItem));   
         }
     },
     // 인스턴스가 생성될때 created() 함수 실행됨
@@ -35,8 +47,7 @@ export default {
 
             for (let [key, value] of Object.entries(localStorage)) {
                 if (key !== 'loglevel:webpack-dev-server') {
-                    console.log(key, value);
-                    this.todoItems.push(value);
+                    this.todoItems.push(JSON.parse(value));
                 }
             }
         }
