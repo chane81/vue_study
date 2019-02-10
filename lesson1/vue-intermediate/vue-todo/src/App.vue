@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <TododoHeader></TododoHeader>
-    <TodoInput></TodoInput>
-    <TodoList v-bind:propsdata="todoItems"></TodoList>
+    <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
+    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem"></TodoList>
     <TodoFooter></TodoFooter>
   </div>
 </template>
@@ -17,6 +17,18 @@ export default {
   data: function() {
     return {
       todoItems: []
+    }
+  },
+  methods: {
+    addOneItem: function(todoItem) {
+      var obj = { completed: false, item: todoItem };
+      localStorage.setItem(todoItem, JSON.stringify(obj));
+      this.todoItems.push(obj)
+    },
+    removeOneItem: function(todoItem, index) {
+      //console.log(todoItem, index);
+      localStorage.removeItem(todoItem.item);
+      this.todoItems.splice(index, 1);
     }
   },
   // 인스턴스가 생성될때 created() 함수 실행됨
