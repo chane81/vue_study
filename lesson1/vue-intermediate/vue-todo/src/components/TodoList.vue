@@ -23,9 +23,7 @@ export default {
             this.$emit('removeItem', todoItem, index);
         },
         toggleComplete: function(todoItem, index) {
-            console.log(todoItem, index);
-            todoItem.completed = !todoItem.completed;
-            localStorage.setItem(todoItem.item, JSON.stringify(todoItem));   
+            this.$emit('toggleItem', todoItem, index)   
         }
     },
 }
