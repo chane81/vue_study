@@ -46,6 +46,7 @@ input:focus {
 .inputBox input {
     border-style: none;
     font-size: 0.9rem;
+    width: 90%
 }
 .addContainer {
     float: right;
