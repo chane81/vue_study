@@ -18,5 +18,8 @@
 			"language": "javascript",
 			"autoFix": true
 		}
-	]
+	],
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+	"prettier.tabWidth": 2
 }
