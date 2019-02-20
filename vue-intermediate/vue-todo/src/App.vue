@@ -1,13 +1,9 @@
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
-    <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
-    <TodoList
-      v-bind:propsdata="todoItems"
-      v-on:removeItem="removeOneItem"
-      v-on:toggleItem="toggleOneItem"
-    ></TodoList>
-    <TodoFooter v-on:clearAll="clearAllItems"></TodoFooter>
+    <TodoInput></TodoInput>
+    <TodoList></TodoList>
+    <TodoFooter></TodoFooter>
   </div>
 </template>
 
@@ -18,32 +14,35 @@ import TodoList from "./components/TodoList.vue";
 import TodoHeader from "./components/TodoHeader.vue";
 
 export default {
-  data() {
-    return {
-      todoItems: []
-    };
-  },
-  methods: {
-    addOneItem(todoItem) {
-      const obj = { completed: false, item: todoItem };
-      localStorage.setItem(todoItem, JSON.stringify(obj));
-      this.todoItems.push(obj);
-    },
-    removeOneItem(todoItem, index) {
-      localStorage.removeItem(todoItem.item);
-      this.todoItems.splice(index, 1);
-    },
-    toggleOneItem(todoItem, index) {
-      this.todoItems[index].completed = !todoItem.completed;
-      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-    },
-    clearAllItems() {
-      localStorage.clear();
-      this.todoItems = [];
-    }
-  },
+  // data() {
+  //   return {
+  //     todoItems: []
+  //   };
+  // },
+  //methods: {
+  // removeOneItem(todoItem, index) {
+  //   localStorage.removeItem(todoItem.item);
+  //   this.todoItems.splice(index, 1);
+  // },
+  // toggleOneItem(todoItem, index) {
+  //   this.todoItems[index].completed = !todoItem.completed;
+  //   localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+  // },
+  // clearAllItems() {
+  //   localStorage.clear();
+  //   this.todoItems = [];
+  // }
+  //},
   // 인스턴스가 생성될때 created() 함수 실행됨
-  created() {},
+  // created() {
+  //   if (localStorage.length > 0) {
+  //     for (let [key, value] of Object.entries(localStorage)) {
+  //       if (key !== "loglevel:webpack-dev-server") {
+  //         this.todoItems.push(JSON.parse(value));
+  //       }
+  //     }
+  //   }
+  // },
   components: {
     TodoHeader,
     TodoInput,

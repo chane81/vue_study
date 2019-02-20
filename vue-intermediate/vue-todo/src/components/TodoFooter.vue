@@ -13,7 +13,8 @@
 export default {
   methods: {
     clearTodo() {
-      this.$emit("clearAll");
+      //this.$emit("clearAll");
+      this.$store.commit("clearTodo");
     }
   }
 };
@@ -26,7 +27,7 @@ export default {
   line-height: 50px;
   background-color: white;
   border-radius: 5px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 .clearAllBtn {
   color: #e20303;
