@@ -43,22 +43,7 @@ export default {
     }
   },
   // 인스턴스가 생성될때 created() 함수 실행됨
-  created() {
-    if (localStorage.length > 0) {
-      // for (var i = 0; i < localStorage.length; i++) {
-      //     if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-      //         this.todoItems.push(localStorage.key(i));
-      //         //console.log(localStorage.key(i));
-      //     }
-      // }
-
-      for (let [key, value] of Object.entries(localStorage)) {
-        if (key !== "loglevel:webpack-dev-server") {
-          this.todoItems.push(JSON.parse(value));
-        }
-      }
-    }
-  },
+  created() {},
   components: {
     TodoHeader,
     TodoInput,
