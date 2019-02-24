@@ -5,7 +5,7 @@
       tag="ul"
     >
       <li
-        v-for="(todoItem, index) in this.$store.state.todoItems"
+        v-for="(todoItem, index) in this.$store.getters.storedTodoItems"
         v-bind:key="todoItem.id"
         class='shadow'
       >
