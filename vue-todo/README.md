@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+## 프로젝트 생성
+- vue init webpack-simple vue-todo
+
 ## Build Setup
 
 ``` bash

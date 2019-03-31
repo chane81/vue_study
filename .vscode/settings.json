@@ -1,9 +1,17 @@
 {
+	// vetur 설정
 	"vetur.format.defaultFormatter.html": "js-beautify-html",
 	"vetur.format.defaultFormatter.js": "prettier",
 	"vetur.format.defaultFormatter.scss": "prettier",
 	"vetur.format.defaultFormatter.stylus": "stylus-supremacy",
 	"vetur.format.defaultFormatter.ts": "vscode-typescript",
+
+	// editor 설정
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+
+	// eslint 설정
+	"eslint.autoFixOnSave": true,
 	"eslint.alwaysShowStatus": true,
 	"eslint.validate": [
 		{
@@ -19,7 +27,21 @@
 			"autoFix": true
 		}
 	],
-	"editor.formatOnSave": true,
-	"editor.tabSize": 2,
-	"prettier.tabWidth": 2
+
+	// prettier 설정
+	"prettier.tabWidth": 4,
+	"prettier.singleQuote": true,
+	"prettier.semi": true,
+
+	// files 설정
+  "files.autoSave": "onFocusChange",
+  "files.defaultLanguage": "ko",
+
+	// 터미널 설정
+	"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+	"terminal.integrated.cursorBlinking": true,
+	"terminal.integrated.cursorStyle": "underline",
+	"terminal.integrated.shellArgs.windows": ["/K", "chcp 65001"],
+	"terminal.integrated.fontFamily": "Lucida console, Consolas, 'Courier New', monospace, 'Segoe UI emoji', 'Segoe UI Symbol'",
+	"terminal.integrated.fontSize":14,
 }
