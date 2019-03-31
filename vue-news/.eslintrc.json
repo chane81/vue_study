@@ -1,10 +1,8 @@
 {
 	"env": {
-		"browser": true,
-		"node": true,
 		"es6": true
 	},
-	"extends": [ "standard", "plugin:vue/essential", "eslint:recommended" ],
+	"extends": [ "plugin:vue/essential", "eslint:recommended" ],
 	"plugins": [ "import", "node", "promise", "standard" ],
 	"rules": {
 		"semi": [ "error", "always" ],
@@ -27,8 +25,6 @@
 		]
 	},
 	"parserOptions": {
-		"parser": "babel-eslint",
-		"ecmaVersion": 6,
-		"sourceType": "module"
+		"parser": "babel-eslint"
 	}
 }
