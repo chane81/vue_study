@@ -3,8 +3,22 @@
 		"es6": true
 	},
 	"extends": [ "plugin:vue/recommended" ],
+	"plugins": [
+    "html",
+    "standard",
+    "vue"
+  ],
 	"rules": {
-		"semi": [ "error", "always" ],
+		"newline-per-chained-call": [ "error", {
+			"ignoreChainWithDepth": 1
+		}],
+		"vue/html-indent": [
+			"error",
+			"tab",
+			{ "alignAttributesVertically": true }
+		],
+		"indent": [ "error", "tab" ],
+		"semi": [ "error" ],
 		"quotes": [ "error", "single" ],
 		"no-unused-vars": "error",
 		"no-console": "off",

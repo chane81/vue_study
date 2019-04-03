@@ -7,7 +7,7 @@
 	"vetur.format.defaultFormatter.ts": "vscode-typescript",
 
 	// editor 설정
-	"editor.formatOnSave": true,
+	"editor.formatOnSave": false,
 	"editor.tabSize": 2,
 
 	// eslint 설정
@@ -30,8 +30,8 @@
 
 	// prettier 설정
 	"prettier.tabWidth": 4,
-	"prettier.singleQuote": true,
-	"prettier.semi": true,
+	// "prettier.singleQuote": true,
+	// "prettier.semi": true,
 
 	// files 설정
   "files.autoSave": "onFocusChange",
