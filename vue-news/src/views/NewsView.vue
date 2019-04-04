@@ -1,32 +1,26 @@
 <template>
-	<div>
-		<div
-			v-for="user in users"
-			:key="user.id"
-		>
-			{{ user.title }}
-		</div>
-	</div>
+  <div>
+    <div v-for="data in G_GET_NEWS" :key="data.id">
+      {{ data.title }}
+    </div>
+  </div>
 </template>
 
 <script>
-import { fetchNewsList } from '../api';
+import { mapGetters, mapActions } from "vuex";
+import { types } from "../store/index";
 
 export default {
-	data() {
-		return {
-			users: []
-		};
-	},
-	created() {
-		fetchNewsList()
-			.then(res => (this.users = res.data))
-			.catch(err => {
-				console.log('err:', err);
-			});
-	}
+  computed: {
+    ...mapGetters([types.G_GET_NEWS])
+  },
+  methods: {
+    ...mapActions([types.A_FETCH_NEWS])
+  },
+  created() {
+    this.A_FETCH_NEWS();
+  }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

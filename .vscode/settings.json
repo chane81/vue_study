@@ -32,7 +32,7 @@
 
 	// prettier 설정
 	"prettier.tabWidth": 2,
-	// "prettier.singleQuote": true,
+	"prettier.singleQuote": true,
 	// "prettier.semi": true,
 
 	// files 설정
