@@ -12,9 +12,8 @@ const router = new VueRouter({
 	mode: 'history',
 	routes: [
 		{
-      path: '/',
-      
-      redirect: 'news'
+			path: '/',
+			redirect: 'news'
 		},
 		{
 			path: '/news',
@@ -26,9 +25,8 @@ const router = new VueRouter({
 		},
 		{
 			path: '/jobs',
-      component: JobsView
-
-},
+	  	component: JobsView
+		},
 		{
 			path: '/user',
 			component: UserView

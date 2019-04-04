@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 
@@ -7,9 +7,7 @@ export const store = new Vuex.Store({
   state: {
     news: []
   },
-  getters,
-  mutations,
-  actions
-
-  
+  getters: {},
+  mutations: {},
+  actions: {}
 });

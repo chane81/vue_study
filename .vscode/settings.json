@@ -10,10 +10,9 @@
 	"editor.formatOnSave": false,
 	"editor.tabSize": 2,
   "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
+  "editor.detectIndentation": true,
 
   // eslint 설정
-  "eslint.enable": true,
 	"eslint.autoFixOnSave": true,
 	"eslint.alwaysShowStatus": true,
 	"eslint.validate": [
