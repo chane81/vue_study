@@ -9,8 +9,11 @@
 	// editor 설정
 	"editor.formatOnSave": false,
 	"editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
 
-	// eslint 설정
+  // eslint 설정
+  "eslint.enable": true,
 	"eslint.autoFixOnSave": true,
 	"eslint.alwaysShowStatus": true,
 	"eslint.validate": [
@@ -29,7 +32,7 @@
 	],
 
 	// prettier 설정
-	"prettier.tabWidth": 4,
+	"prettier.tabWidth": 2,
 	// "prettier.singleQuote": true,
 	// "prettier.semi": true,
 

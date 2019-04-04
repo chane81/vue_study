@@ -1,17 +1,20 @@
 {
 	"env": {
-		"es6": true
+		"browser": true,
+		"commonjs": true,
+		"es6": true,
+		"jest": true,
+		"node": true
 	},
 	"extends": [ "plugin:vue/recommended" ],
-	"plugins": [
-    "html",
-    "standard",
-    "vue"
-  ],
+	"plugins": [ "html", "standard", "vue" ],
 	"rules": {
-		"newline-per-chained-call": [ "error", {
-			"ignoreChainWithDepth": 1
-		}],
+		"newline-per-chained-call": [
+			"error",
+			{
+				"ignoreChainWithDepth": 1
+			}
+		],
 		"vue/html-indent": [
 			"error",
 			"tab",

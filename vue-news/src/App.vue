@@ -2,17 +2,17 @@
   <div id="app">
     <tool-bar />
     <router-view />
+
+
+
   </div>
 </template>
 
 <script>
-import ToolBar from './components/ToolBar';
+import ToolBar from "./components/ToolBar";
 
 export default {
-  components: {
-    ToolBar
-  }
-};
+  components: {ToolBar}};
 </script>
  
 <style>

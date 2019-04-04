@@ -1,4 +1,6 @@
 /* eslint-disable */
 module.exports = {
-  lintOnSave: true
+	presets: [
+		"@vue/app"
+	]
 };
