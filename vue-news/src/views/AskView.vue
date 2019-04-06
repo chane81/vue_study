@@ -3,6 +3,9 @@
     <p v-for="data in GET_ASK" :key="data.id">
       <a :href="data.url">{{ data.title }}</a>
       <small>{{ data.time_ago }} by {{ data.user }}</small>
+      <router-link :to="`/item/${data.id}`">
+        ##{{ data.user }} gogo
+      </router-link>
     </p>
   </div>
 </template>
