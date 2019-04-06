@@ -3,9 +3,9 @@ export default {
     state.news = payload;
   },
   SET_JOBS(state, payload) {
-    state.ask = payload;
+    state.jobs = payload;
   },
   SET_ASK(state, payload) {
-    state.jobs = payload;
+    state.ask = payload;
   }
 };
