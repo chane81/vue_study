@@ -1,24 +1,23 @@
 <template>
   <div>
-    <div v-for="job in G_GET_JOBS" :key="job.id">
-      {{ job.title }}
+    <div v-for="data in GET_JOBS" :key="data.id">
+      {{ data.title }}
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-import { types } from "../store/index";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters([types.G_GET_JOBS])
+    ...mapGetters(['GET_JOBS'])
   },
   methods: {
-    ...mapActions([types.A_FETCH_JOBS])
+    ...mapActions(['FETCH_JOBS'])
   },
   created() {
-    this.A_FETCH_JOBS();
+    this.FETCH_JOBS();
   }
 };
 </script>

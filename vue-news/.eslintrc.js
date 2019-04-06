@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: ["plugin:vue/essential", "@vue/prettier"],
   rules: {
-    // "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": ["error", { singleQuote: true }],
+    // "vue/html-quotes": ["error", "single"],
 		"no-unused-vars": "warn",
     "no-console": "off",
   },
