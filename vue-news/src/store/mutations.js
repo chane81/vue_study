@@ -7,5 +7,8 @@ export default {
   },
   SET_ASK(state, payload) {
     state.ask = payload;
+  },
+  SET_USER(state, payload) {
+    state.user = payload;
   }
 };
