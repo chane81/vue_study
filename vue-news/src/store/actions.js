@@ -36,8 +36,8 @@ export default {
   },
   FETCH_USER({ commit }, payload) {
     fetchUserInfo(payload)
-      .then(data => {
-        commit('SET_USER', data.data);
+      .then(({ data }) => {
+        commit('SET_USER', data);
       })
       .catch(err => {
         console.log('FETCH_USER:', err);
@@ -45,8 +45,8 @@ export default {
   },
   FETCH_ITEM({ commit }, payload) {
     fetchItemInfo(payload)
-      .then(data => {
-        commit('SET_ITEM', data.data);
+      .then(({ data }) => {
+        commit('SET_ITEM', data);
       })
       .catch(err => {
         console.log('FETCH_ITEM:', err);
