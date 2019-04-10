@@ -35,3 +35,10 @@ npx @vue/cli create vue-news
     -	https://api.hnpwa.com/v0/show/1.json
   - Jobs
     - https://api.hnpwa.com/v0/jobs/1.json
+
+## 트렌지션
+  - 라우터 트렌지션 문서
+    > https://router.vuejs.org/guide/advanced/transitions.html#per-route-transition
+  - ALL 트렌지션 문서
+    > https://vuejs.org/v2/guide/transitions.html
+    
