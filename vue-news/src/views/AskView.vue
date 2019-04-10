@@ -1,11 +1,8 @@
 <template>
   <div>
     <p v-for="data in GET_ASK" :key="data.id">
-      <a :href="data.url">{{ data.title }}</a>
+      <router-link :to="`/item/${data.id}`">{{ data.title }}</router-link>
       <small>{{ data.time_ago }} by {{ data.user }}</small>
-      <router-link :to="`/item/${data.id}`">
-        ##{{ data.user }} gogo
-      </router-link>
     </p>
   </div>
 </template>
