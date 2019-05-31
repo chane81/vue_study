@@ -1,23 +1,12 @@
 <template>
   <div>
-    <!-- <p v-for="data in GET_NEWS" :key="data.id">
-      <a v-bind:href="data.url">
-        {{ data.title }}
-      </a>
-      <small>
-        {{ data.time_ago }} by
-        <router-link :to="`/user/${data.user}`">
-          {{ data.user }}
-        </router-link>
-      </small>
-    </p>-->
-    <ul class="news-list">
+    <ul class="list">
       <li v-for="data in GET_NEWS" :key="data.id" class="post">
         <!-- 포인트 영역 -->
         <div class="points">{{ data.points }}</div>
         <!-- 기타 정보 영역 -->
         <div>
-          <p class="news-title">
+          <p class="title">
             <a v-bind:href="data.url">{{ data.title }}</a>
           </p>
           <small class="link-text">
@@ -25,11 +14,6 @@
             <router-link :to="`/user/${data.user}`" class="link-text">{{ data.user }}</router-link>
           </small>
         </div>
-        <!-- <a v-bind:href="data.url">{{ data.title }}</a>
-        <small>
-          {{ data.time_ago }} by
-          <router-link :to="`/user/${data.user}`">{{ data.user }}</router-link>
-        </small>-->
       </li>
     </ul>
   </div>
@@ -52,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-.news-list {
+.list {
   margin: 0;
   padding: 0;
 }
@@ -70,7 +54,7 @@ export default {
   justify-content: center;
   color: #42b883;
 }
-.news-title {
+.title {
   margin: 0;
 }
 .link-text {
