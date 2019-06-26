@@ -7,6 +7,22 @@ import {
 } from '../api';
 
 export default {
+  FETCH_DATA({ commit, dispatch }, payload) {
+    switch (payload) {
+      case 'news' || 'root': {
+        dispatch('FETCH_NEWS');
+        break;
+      }
+      case 'ask': {
+        dispatch('FETCH_ASK');
+        break;
+      }
+      case 'jobs': {
+        dispatch('FETCH_JOBS');
+        break;
+      }
+    }
+  },
   FETCH_NEWS({ commit }) {
     fetchNewsList()
       .then(({ data }) => {
