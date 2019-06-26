@@ -1,24 +1,27 @@
 <template>
   <div>
-    <p>name: {{ GET_USER.id }}</p>
-    <p>karma: {{ GET_USER.karma }}</p>
-    <p>created: {{ GET_USER.created }}</p>
+    <p>name: {{ GET_DATA.id }}</p>
+    <p>karma: {{ GET_DATA.karma }}</p>
+    <p>created: {{ GET_DATA.created }}</p>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(['GET_USER'])
+    //...mapGetters(["GET_DATA"])
+    GET_DATA() {
+      return this.$store.getters.GET_DATA("user");
+    }
   },
   methods: {
-    ...mapActions(['FETCH_USER'])
+    ...mapActions(["FETCH_USER"])
   },
   created() {
-    const userNmae = this.$route.params.id;
-    this.FETCH_USER(userNmae);
+    const userName = this.$route.params.id;
+    this.FETCH_USER(userName);
   }
 };
 </script>
