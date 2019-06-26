@@ -7,15 +7,15 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-          <router-link :to="`/user/${GET_ITEM.user}`">{{ GET_ITEM.user }}</router-link>
-          <div class="time">{{ GET_ITEM.time_ago }}</div>
+          <router-link :to="`/user/${GET_DATA.user}`">{{ GET_DATA.user }}</router-link>
+          <div class="time">{{ GET_DATA.time_ago }}</div>
         </div>
       </div>
-      <h2>{{ GET_ITEM.title }}</h2>
+      <h2>{{ GET_DATA.title }}</h2>
     </section>
     <section>
       <!-- 질문 댓글 -->
-      <div v-html="GET_ITEM.content"></div>
+      <div v-html="GET_DATA.content"></div>
     </section>
   </div>
 </template>
@@ -25,7 +25,9 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["GET_ITEM"])
+    GET_DATA() {
+      return this.$store.getters.GET_DATA("item");
+    }
   },
   methods: {
     ...mapActions(["FETCH_ITEM"])
