@@ -31,21 +31,24 @@ export const store = new Vuex.Store({
     item: {}
   },
   getters: {
-    GET_NEWS(state) {
-      return state.news;
-    },
-    GET_ASK(state) {
-      return state.ask;
-    },
-    GET_JOBS(state) {
-      return state.jobs;
-    },
-    GET_USER(state) {
-      return state.user;
-    },
-    GET_ITEM(state) {
-      return state.item;
+    GET_DATA: (state, getters) => payload => {
+      return state[payload];
     }
+    // GET_NEWS(state) {
+    //   return state.news;
+    // },
+    // GET_ASK(state) {
+    //   return state.ask;
+    // },
+    // GET_JOBS(state) {
+    //   return state.jobs;
+    // },
+    // GET_USER(state) {
+    //   return state.user;
+    // },
+    // GET_ITEM(state) {
+    //   return state.item;
+    // }
   },
   mutations,
   actions
