@@ -7,17 +7,21 @@
         <!-- 기타 정보 영역 -->
         <div>
           <p class="title">
-            <a v-bind:href="data.url">{{ data.title }}</a>
+            <template v-if="data.domain">
+              <a v-bind:href="data.url">{{ data.title }}</a>
+            </template>
+            <template v-else>
+              <router-link :to="`item/${data.id}`">{{data.title}}</router-link>
+            </template>
           </p>
           <small class="link-text">
-            <div v-if="routeName !== 'jobs'" name="by">
-              by
-              <router-link :to="`/user/${data.user}`" class="link-text">{{ data.user }}</router-link>
-            </div>
-            <div v-if="routeName === 'jobs'" name="by-jobs">
-              {{ data.time_ago }} by
-              <a :href="data.url">{{ data.domain }}</a>
-            </div>
+            {{ data.time_ago }} by
+            <router-link
+              v-if="data.user"
+              :to="`/user/${data.user}`"
+              class="link-text"
+            >{{ data.user }}</router-link>
+            <a v-else :href="data.url" target="_blank">{{ data.domain }}</a>
           </small>
         </div>
       </li>
