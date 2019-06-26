@@ -7,12 +7,8 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-          <router-link :to="`/user/${GET_ITEM.user}`">
-            {{ GET_ITEM.user }}
-          </router-link>
-          <div class="time">
-            {{ GET_ITEM.time_ago }}
-          </div>
+          <router-link :to="`/user/${GET_ITEM.user}`">{{ GET_ITEM.user }}</router-link>
+          <div class="time">{{ GET_ITEM.time_ago }}</div>
         </div>
       </div>
       <h2>{{ GET_ITEM.title }}</h2>
@@ -21,32 +17,18 @@
       <!-- 질문 댓글 -->
       <div v-html="GET_ITEM.content"></div>
     </section>
-
-    <!-- <div>title: {{ GET_ITEM.title }}</div>
-    <div>points: {{ GET_ITEM.points }}</div>
-    <div>user: {{ GET_ITEM.user }}</div>
-    <div>type: {{ GET_ITEM.type }}</div>
-    <div>content: {{ GET_ITEM.content }}</div>
-    <div v-for="comment in GET_ITEM.comments" :key="comment.id">
-      <p>comment id: {{ comment.id }}</p>
-      <p>comment user: {{ comment.user }}</p>
-      <p>comment time: {{ comment.time }}</p>
-      <p>comment time_ago: {{ comment.time_ago }}</p>
-      <p>comment type: {{ comment.type }}</p>
-      <p>comment content: {{ comment.content }}</p>
-    </div> -->
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(['GET_ITEM'])
+    ...mapGetters(["GET_ITEM"])
   },
   methods: {
-    ...mapActions(['FETCH_ITEM'])
+    ...mapActions(["FETCH_ITEM"])
   },
   created() {
     const id = this.$route.params.id;
